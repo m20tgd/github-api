@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub API</title>
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="col-8 offset-2 my-5">
+            <div class="row">
+                <fieldset class="p-0">
+                    <legend>Search for GitHub User</legend>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Enter Name" value="robconery">
+                        <button class="btn btn-secondary" type="button" id="search-btn">Search</button>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="row state" id="loading" hidden>
+                <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+            <div class="row state" id="none-found" hidden>
+                No user with the name <span id="name-not-found"></span> found.
+            </div>
+            <div class="row state" id="results-div" hidden>
+                <div class="card">
+                    <img src="..." class="card-img-top w-25 my-2" alt="User's Avatar" id="users-avatar">
+                    <div class="card-body">
+                      <h3 id="user-title"></h3>
+                      <div>Name - <span id='name'></span></div>
+                      <div>Location - <span id='location'></span></div>
+                      <fieldset class="p-0 mt-5">
+                        <legend>Top 5 Repos</legend>
+                        <table class="table" id="'repo-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Full Name</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Stargazers</th>
+                                </tr>
+                            </thead>
+                            <tbody id="repo-tb">
+
+                            </tbody>
+                        </table>
+                    </fieldset>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
